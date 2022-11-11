@@ -5,7 +5,9 @@ import fastifyRateLimit  from '@fastify/rate-limit'
 
 import { routers } from "./routers";
 
-dotenv.config()
+const start = async () =>{
+
+   dotenv.config()
 
 
    // start fastify
@@ -15,14 +17,14 @@ dotenv.config()
 
 
    // fastify rate limit
-   fastify.register( fastifyRateLimit, {
+   await fastify.register( fastifyRateLimit, {
       max: 5,
       timeWindow: '1 minute'
    })
 
 
    // cors
-   fastify.register(cors);
+   await fastify.register(cors);
 
 
    // api routes
@@ -31,8 +33,12 @@ dotenv.config()
 
    // fastify server
 
-   fastify.listen({ port: 9901, host: 'localhost' });
+   await fastify.listen({ port: 9901, host: 'localhost' });
 
 
 
    console.log(`⚡ Server Rodando 🚪 9901`)
+
+}
+
+start()
