@@ -59,11 +59,4 @@ export const signin = async ( req : any, res : any ) => {
 
     }
 
-
-
-
-
-
-
-    return res.send('Salve')
 }
