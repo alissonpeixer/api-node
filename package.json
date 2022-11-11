@@ -2,12 +2,12 @@
   "name": "server",
   "version": "0.0.1",
   "description": "Palpites para a copa",
-  "main": "index.js",
+  "main": "index.ts",
   "author": "Alisson Peixer",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.1.7",
