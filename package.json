@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch api/index.ts"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.1.7",
