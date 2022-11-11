@@ -3,7 +3,7 @@ import cors from '@fastify/cors'
 import * as dotenv from 'dotenv'
 import fastifyRateLimit  from '@fastify/rate-limit'
 
-import { apiRouters } from "./app";
+import { routers } from "./routers";
 
 const start = async () =>{
 
@@ -28,17 +28,16 @@ const start = async () =>{
 
 
    // api routes
-   apiRouters(fastify);
+   routers(fastify);
 
 
    // fastify server
 
-   await fastify.listen({ port: 9901 });
+   await fastify.listen({ port: 9901, host: 'localhost' });
 
 
 
-
-   console.log(`⚡ Server Rodando`)
+   console.log(`⚡ Server Rodando 🚪 9901`)
 
 }
 

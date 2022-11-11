@@ -7,6 +7,17 @@
 
 ## **uC202** - Created account successfully!
 
+> Login user
+## **sE802** - Login notfound!
 
-> Validation Host and Client IP
+
+> util/ Validation Host and Client IP
 ## **vE302** - Is not auto
+
+> Global
+## **gE404** - Nada foi encontrado
+
+
+> util/Base64
+## **bE602** - authorization notfound in header
+## **bE603** - base64 code invalid

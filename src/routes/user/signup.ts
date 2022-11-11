@@ -26,7 +26,7 @@ interface CreatedReq {
 }
 
 
-export const created = async (req : CreatedReq , res : PropRes) => {
+export const signup = async (req : CreatedReq , res : PropRes) => {
 
 
     const body = req.body

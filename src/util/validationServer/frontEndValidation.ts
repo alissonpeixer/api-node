@@ -9,11 +9,11 @@ interface Props {
 }
 
 export const ValidationFrontEnd = ( req : Props) => {
-    var hostname = req.headers.host
-    var ip = req.connection.remoteAddress
+    const hostname = req.headers.host
+    const ip = req.connection.remoteAddress
 
 
-    if (hostname !== "localhost:9901" && hostname !== "127.0.0.1'"){
+    if (hostname !== process.env.WEB_HOSTNAME ){
 
         console.log({hostname,ip})
 
