@@ -8,7 +8,7 @@ export const routers = (fastify : any) => {
 
     fastify.get('*', notFound);
 
-    fastify.get('/user/signin',  signin);
-    fastify.post('/user/signup',  signup);
+    // fastify.get('/user/signin',  signin);
+    // fastify.post('/user/signup',  signup);
 
 }
