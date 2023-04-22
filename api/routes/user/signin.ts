@@ -11,7 +11,6 @@ export const signin = async ( req : any, res : any ) => {
 
 
     try {
-
         if(!data.status){
             res.code(403)
             return res.send({
@@ -20,13 +19,11 @@ export const signin = async ( req : any, res : any ) => {
             })
         }
 
-
         const [userData] = await prisma.user.findMany({
             where: {
                 email: data.user?.login
             }
         })
-
 
 
         if(!userData){
@@ -36,8 +33,6 @@ export const signin = async ( req : any, res : any ) => {
                 msg: 'Login NotFound'
             })
         }
-
-
 
         res.send({
             code:'sC802',

@@ -1,7 +1,8 @@
 import { prisma } from '../../db'
 import { JwtTokenCreated } from '../../util/jwt/token'
 import { ValidationFrontEnd } from '../../util/validationServer/frontEndValidation';
-
+import { resErro } from '../../util/res/erro';
+import ValidBody  from '../../util/req/validBody';
 
 export interface PropRes {
     send(mensage: object): any;
@@ -15,6 +16,7 @@ interface CreatedReq {
         email: string;
         username: string;
         password: string;
+        valid: boolean;
     },
     headers: {
         authorization: string;
@@ -33,40 +35,27 @@ export const signup = async (req : CreatedReq , res : PropRes) => {
     const headers = req.headers
 
 
-
-
     if(!headers.authorization){
-        res.code(401)
-        res.send({
-            code: 'uE102',
-            msg: 'Null'
+        resErro(res, 404, {
+            code: 'resE101',
+            msg: 'isNull'
         })
         return
     }
 
-
-
+    if(!ValidBody.signup(req.body)){
+        resErro(res, 406, {
+            code: 'resE102',
+            msg: 'Body NotFound'
+        })
+        return
+    }
 
     try {
-        const [,bearerKey] = headers.authorization.split(' ');
-        const apiKey = Buffer.from(bearerKey, 'base64').toString('utf8')
-
-
         if(!ValidationFrontEnd(req)){
-            res.code(403)
-            res.send({
+            resErro(res, 405, {
                 code: 'vE302',
-            })
-
-            return
-        }
-
-
-        if(!apiKey) {
-            res.code(401)
-            res.send({
-                code: 'uE103',
-                msg: 'apiKey not provided'
+                msg: 'Invalid WebServe'
             })
             return
         }

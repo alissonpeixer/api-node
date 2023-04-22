@@ -13,7 +13,7 @@ export const ValidationFrontEnd = ( req : Props) => {
     const ip = req.connection.remoteAddress
 
 
-    if (hostname !== process.env.WEB_HOSTNAME ){
+    if (ip !== process.env.WEB_IP ){
 
         console.log({hostname,ip})
 

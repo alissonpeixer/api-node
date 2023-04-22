@@ -1,4 +1,6 @@
 export const BaseConvertAuth = (data : any ) =>{
+    const [,basicCode] = data.headers.authorization.split(' ')
+    const [login,password] = Buffer.from(basicCode, 'base64').toString('utf-8').split(':');
 
 
     if(!data.headers.authorization){
@@ -8,15 +10,6 @@ export const BaseConvertAuth = (data : any ) =>{
             message: 'NotFound authorization in header'
         }
     }
-
-
-
-    const [,basicCode] = data.headers.authorization.split(' ')
-    const [login,password] = Buffer.from(basicCode, 'base64').toString('utf-8').split(':');
-
-
-
-
 
     if(!basicCode){
         return {
