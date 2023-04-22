@@ -1,12 +1,12 @@
 {
   "name": "server",
   "version": "0.0.1",
-  "main": "index.ts",
+  "main": "index.js",
   "author": "Alisson Peixer",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "tsx watch api/index.ts"
+    "start": "tsx watch api/index.ts"
   },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.1.7",
