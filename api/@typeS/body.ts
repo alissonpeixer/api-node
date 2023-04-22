@@ -8,8 +8,6 @@ export type Signup = {
 }
 
 
-
-
 class DefaultValues {
     constructor() {
 

@@ -17,8 +17,7 @@ export const JwtTokenCreated = ( data : Props) =>{
 
 
     try {
-        return jwt.sign(
-            {data},
+        return jwt.sign(data,
             process.env.JWT_KEY as string,
             {
                 expiresIn: '30d',

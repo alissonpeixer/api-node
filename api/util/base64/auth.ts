@@ -1,4 +1,6 @@
 export const BaseConvertAuth = (data : any ) =>{
+
+
     const [,basicCode] = data.headers.authorization.split(' ')
     const [login,password] = Buffer.from(basicCode, 'base64').toString('utf-8').split(':');
 
