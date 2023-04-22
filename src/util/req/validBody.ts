@@ -1,4 +1,4 @@
-import DefaultValues, { Signup }  from "../../@typeS/body";
+import DefaultValues, { Signup }  from "../../@types/body";
 
 
 

@@ -3,8 +3,8 @@ import { JwtTokenCreated } from '../../util/jwt/token'
 import { ValidationFrontEnd } from '../../util/validationServer/frontEndValidation';
 import { resErro } from '../../util/res/erro';
 import ValidBody  from '../../util/req/validBody';
-import { PropReq, PropRes } from '../../@typeS/request';
-import { Signup } from '../../@typeS/body';
+import { PropReq, PropRes } from '../../@types/request';
+import { Signup } from '../../@types/body';
 
 export const signup = async (req : PropReq , res : PropRes) => {
 
