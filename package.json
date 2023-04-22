@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "0.0.1",
-  "main": "dist/index.js",
+  "main": "index.js",
   "author": "Alisson Peixer",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "tsx watch api/index.ts",
-    "start": "node dist/index.js",
+    "start": "node api/index.js",
     "build": "tsc"
   },
   "devDependencies": {
