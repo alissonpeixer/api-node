@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "tsx watch api/index.ts",
+    "dev": "tsx watch src/index.ts",
     "start": "node api/index.js",
     "build": "tsc"
   },
