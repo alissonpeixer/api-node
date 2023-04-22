@@ -7,7 +7,6 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "start": "node api/index.js",
     "build": "tsc"
   },
   "devDependencies": {
