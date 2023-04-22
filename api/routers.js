@@ -1,4 +1,3 @@
-"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.routers = void 0;
 const notFound_1 = require("./routes/notFound");

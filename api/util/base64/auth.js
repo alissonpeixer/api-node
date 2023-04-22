@@ -1,4 +1,3 @@
-"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseConvertAuth = void 0;
 const BaseConvertAuth = (data) => {
