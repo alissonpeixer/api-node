@@ -23,9 +23,9 @@ export async function GET(request: Request) {
             }
         })
 
-        if(!Bcrtypt.DeCode(user?.password || '',aUser[0].password)){
-            throw new EvalError('PASSWORD & incorrect & 401')
-        }
+        // if(!Bcrtypt.DeCode(user?.password || '',aUser[0].password)){
+        //     throw new EvalError('PASSWORD & incorrect & 401')
+        // }
 
         return NextResponse.json(aUser)
     } catch (error) {
