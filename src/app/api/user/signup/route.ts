@@ -4,6 +4,7 @@ import { NextResponse } from "next/server";
 import Error from "@/util/error";
 import prisma from "@/lib/prisma";
 import Bcrtypt  from "@/util/fBcrypt/fBcrypt";
+import { JwtTokenCreated } from "@/util/jwt/token";
 
 
 
@@ -30,8 +31,19 @@ export async function POST(request: Request) {
             }
         })
 
+        const token = JwtTokenCreated({
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            password: user.password
+        })
 
-        return NextResponse.json({user})
+        return NextResponse.json({
+            id: user.id,
+            name: user.name,
+            username: user.username,
+            token
+        })
 
 
     } catch (error : any) {
