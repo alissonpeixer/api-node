@@ -24,6 +24,28 @@ class Error {
 
 
     }
+
+    Jwt(error:any){
+        return NextResponse.json(error, {
+            status: 501,
+            statusText: 'eJWT_?'
+        })
+    }
+
+
+    SignIn(error:any){
+        if(error instanceof EvalError){
+
+            const [area,msg,code] = error.message.split('&')
+
+            return NextResponse.json(error, {
+                status: Number(code),
+                statusText: area + msg
+            })
+
+        }
+
+    }
 }
 
 

@@ -2,8 +2,10 @@ import { URL } from "next/dist/compiled/@edge-runtime/primitives/url";
 import { NextResponse } from "next/server";
 
 import Error from "@/util/error";
+import prisma from "@/lib/prisma";
+import Bcrtypt  from "@/util/bcrypt/Bcrtypt";
 
-import prisma from "../../../../lib/prisma";
+
 
 export async function POST(request: Request) {
 
@@ -20,17 +22,16 @@ export async function POST(request: Request) {
         }
 
 
-
         const user = await prisma.user.create({
             data:{
                 username,
-                password,
+                password: Bcrtypt.EnCode(password),
                 name
             }
         })
 
 
-        return NextResponse.json(user)
+        return NextResponse.json({user})
 
 
     } catch (error : any) {
