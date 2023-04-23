@@ -5,7 +5,7 @@ class Bcrtypt {
     saltRounds: number
 
     constructor(){
-        this.saltRounds = 17
+        this.saltRounds = 3
     }
 
 

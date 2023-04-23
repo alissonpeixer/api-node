@@ -1,15 +1,15 @@
-import bcrypt from 'bcrypt'
 import { NextResponse } from "next/server";
 
 
 import prisma from "@/lib/prisma";
 
 import Error from "@/util/error";
-
+import Bcrtypt  from "@/util/fBcrypt/fBcrypt";
 import { BaseConvertAuth } from "@/util/basic64/basic";
 
 export async function GET(request: Request) {
     const {status,user,code,message} = BaseConvertAuth(request)
+
 
     try {
 
@@ -23,7 +23,7 @@ export async function GET(request: Request) {
             }
         })
 
-        if(!bcrypt.compareSync(user?.password || '', aUser[0].password)){
+        if(!Bcrtypt.DeCode(user?.password || '',aUser[0].password)){
             throw new EvalError('PASSWORD & incorrect & 401')
         }
 
