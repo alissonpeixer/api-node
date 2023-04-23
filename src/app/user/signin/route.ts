@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
 
 import Error from "@/util/error";
-import Bcrtypt  from "@/util/bcrypt/Bcrtypt";
+import Bcrtypt  from "@/util/bcrypt/bcrypt";
 import { BaseConvertAuth } from "@/util/basic64/basic";
 
 export async function GET(request: Request) {
