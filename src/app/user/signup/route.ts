@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 import Error from "@/util/error";
 import prisma from "@/lib/prisma";
-import Bcrtypt  from "@/util/bcrypt/bcrypt";
+import Bcrtypt  from "@/util/fBcrypt/fBcrypt";
 
 
 
