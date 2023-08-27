@@ -4,6 +4,8 @@ TRANSLATE: [INGLES 🇺🇸](READMEENG.md)
 
 Este é um projeto de API Node.js que utiliza as tecnologias Fastify, Prisma e Swagger para criar uma API robusta e documentada.
 
+[LIVE DEMO](http://aspx.site:8080/docs)
+
 ## Requisitos
 
 Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
