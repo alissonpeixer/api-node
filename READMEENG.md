@@ -25,6 +25,7 @@ Make sure you have Node.js and npm (or yarn) installed on your machine.
    cd project-name
    ```
 
+
 3. Create a .env file at the root of your project to set up the necessary environment variables. You can use the provided .env.example file as a reference.
 
 4. Run Prisma migrations to set up the database:

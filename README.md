@@ -24,7 +24,6 @@ Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
    ```bash
    cd nome-do-seu-projeto
    ```
-
 4. Crie um arquivo .env na raiz do seu projeto para configurar as variáveis de ambiente necessárias. Você pode se basear no arquivo .env.example fornecido.
 
 5. Execute as migrações do Prisma para configurar o banco de dados:
