@@ -3,10 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import fastify, { FastifyInstance } from 'fastify';
 
+require('dotenv').config();
+
 import { ITRouter } from './interface/router';
-
-
-
 
 const swaggerOptions = {
   swagger: {
@@ -35,6 +34,8 @@ const swaggerUiOptions = {
 class App {
 
   app: FastifyInstance = fastify();
+  port: number | string = process.env.PORT_API || 3000;
+  url: string = process.env.URL_API || '0.0.0.0';
 
   constructor() {
     this.start();
@@ -94,11 +95,11 @@ class App {
   private async registers() {
 
     await this.app.register(import('@fastify/jwt'), {
-      secret: '12312ASVC'
+      secret: process.env.JWT_SECRET || '',
     });
 
     await this.app.register(import('@fastify/cors'), {
-      origin: '*',
+      origin: process.env.CORS_ORIGIN || '*',
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
     });
 
@@ -128,13 +129,17 @@ class App {
 
 
   private startServer() {
-    this.app.listen({ port: 8080, host: '0.0.0.0' }, (err, address) => {
+    this.app.listen({ port: this.port as number, host: this.url }, (err, address) => {
       if (err) {
         console.error(err)
         process.exit(1)
       }
 
-      console.log(`Server listening at ${address}`)
+      console.log(" ");
+      console.log(this.app.printRoutes());
+      console.log(" ");
+      console.log(`READY => Start in ${address}`);
+      console.log(" ");
     });
   }
 
