@@ -24,7 +24,7 @@ Certifique-se de ter o Node.js e o npm (ou yarn) instalados em sua máquina.
 2. Instale as dependências do projeto:
 
    ```bash
-   cd nome-do-seu-projeto
+   cd  api-node
    ```
 4. Crie um arquivo .env na raiz do seu projeto para configurar as variáveis de ambiente necessárias. Você pode se basear no arquivo .env.example fornecido.
 
